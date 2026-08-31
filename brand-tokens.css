@@ -1,0 +1,22 @@
+/* Expedite GTM — brand colour tokens (blue system, from #1F54DD)
+   Change the four --brand-* values to reshade the whole site. */
+:root{
+  --brand:        #1F54DD;  /* primary blue */
+  --brand-deep:   #1A46C0;  /* hover / text-on-light */
+  --brand-tint:   #EAEFFD;  /* pale wash */
+  --brand-ink:    #FFFFFF;  /* text on a blue button */
+
+  --secondary:    #0A1740;  /* deep indigo: dark grounds, footer, CTA */
+  --tertiary:     #12A9D8;  /* cyan: sparing highlights */
+
+  --ink:          #0B1330;  --ink-soft:#434D6B; --ink-faint:#79839E;
+  --line:         #E4E8F3;  --bg:#FFFFFF; --bg-soft:#F5F7FC;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --brand:      #6E90FF;  --brand-deep:#5980F5; --brand-tint:#182247;
+    --secondary:  #0A1330;  --tertiary:#37C6EE;
+    --ink:        #EEF1F9;  --ink-soft:#AAB3CC; --ink-faint:#727C99;
+    --line:       #212B49;  --bg:#070B18; --bg-soft:#0D1428;
+  }
+}
