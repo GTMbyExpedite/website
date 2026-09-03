@@ -57,7 +57,7 @@
 }
 
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   font-size:18px;line-height:1.66;font-weight:400;
@@ -135,11 +135,10 @@ h1.hl{font-size:clamp(40px,5.8vw,64px);letter-spacing:-.04em;line-height:1.04}
 
 .logos{padding:34px 0 8px}
 .logos .lbl{text-align:center;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:22px}
-.logo-row{display:flex;flex-wrap:nowrap;align-items:stretch;gap:14px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:2px}
-.logo-row::-webkit-scrollbar{display:none}
-.logo-chip{flex:1 0 auto;min-width:118px;height:62px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(15,23,60,.05)}
-.logo-text{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13.5px;color:var(--ink-faint);letter-spacing:-.01em;padding:0 16px}
-.logo-chip img{max-height:28px;max-width:90px;width:auto;height:auto;object-fit:contain;display:block}
+.logo-row{display:flex;flex-wrap:wrap;align-items:stretch;gap:14px;justify-content:center;padding-bottom:2px}
+.logo-chip{flex:0 1 auto;min-width:110px;height:56px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(15,23,60,.05);padding:0 18px}
+.logo-text{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13.5px;color:var(--ink-faint);letter-spacing:-.01em}
+.logo-chip img{max-height:26px;max-width:88px;width:auto;height:auto;object-fit:contain;display:block}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-chip img{filter:brightness(0) invert(1) opacity(.7)}}
 :root[data-theme="dark"] .logo-chip img{filter:brightness(0) invert(1) opacity(.7)}
 .logo-nda{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:20px}
@@ -294,7 +293,10 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 @media(max-width:820px){.proof-grid{grid-template-columns:1fr}}
 .proof-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
 .proof-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
-.proof-logo{height:32px;padding:0 14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.proof-logo{height:36px;padding:0 14px;background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.proof-logo img{max-height:22px;max-width:100px;width:auto;height:auto;object-fit:contain;display:block}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .proof-logo img{filter:brightness(0) invert(1) opacity(.8)}}
+:root[data-theme="dark"] .proof-logo img{filter:brightness(0) invert(1) opacity(.8)}
 .proof-tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint)}
 .proof-challenge{font-size:14.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.55}
 .proof-result{display:flex;gap:20px;align-items:center;flex:1}
@@ -302,12 +304,14 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .proof-num{color:var(--accent)}}
 :root[data-theme="dark"] .proof-num{color:var(--accent)}
 .proof-detail{font-size:14.5px;color:var(--ink-soft);line-height:1.55;padding-top:6px}
+.proof-detail ul{margin:0;padding:0 0 0 18px;display:flex;flex-direction:column;gap:5px}
+.proof-detail ul li{font-size:14.5px;color:var(--ink-soft);line-height:1.5}
 .quotes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
 @media(max-width:820px){.quotes{grid-template-columns:1fr}}
 .quotec{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:16px}
 .quotec p{font-size:17.5px;color:var(--ink);line-height:1.55}
 .quotec .by{display:flex;align-items:center;gap:13px;margin-top:auto}
-.quotec .av{width:42px;height:42px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-family:"IBM Plex Mono",monospace;font-size:15px;flex:0 0 auto}
+.quotec .av{width:52px;height:52px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-family:"IBM Plex Mono",monospace;font-size:15px;flex:0 0 auto;overflow:hidden}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .quotec .av{color:var(--accent)}}
 :root[data-theme="dark"] .quotec .av{color:var(--accent)}
 .quotec .by-info{display:flex;flex-direction:column}
@@ -338,7 +342,7 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 .feat p{margin-top:7px;color:var(--ink-soft);font-size:14.5px}
 .founder{display:flex;gap:22px;align-items:center;margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow-sm)}
 @media(max-width:560px){.founder{flex-direction:column;align-items:flex-start}}
-.f-photo{flex:0 0 auto;width:108px;height:108px;border-radius:18px;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:34px;box-shadow:var(--shadow-sm);overflow:hidden}
+.f-photo{flex:0 0 auto;width:140px;height:140px;border-radius:18px;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:34px;box-shadow:var(--shadow-sm);overflow:hidden}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .f-photo{color:var(--accent)}}
 :root[data-theme="dark"] .f-photo{color:var(--accent)}
 .f-name{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:18px}
@@ -387,7 +391,7 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 .rec .li-badge .li-icon{width:18px;height:18px;color:#0A66C2;flex:0 0 auto}
 .rec blockquote{margin:0;font-size:15.5px;color:var(--ink);line-height:1.6;flex:1}
 .rec .li-by{display:flex;align-items:center;gap:13px;margin-top:auto}
-.rec .li-av{width:54px;height:54px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-family:"IBM Plex Mono",monospace;font-size:17px;flex:0 0 auto;overflow:hidden}
+.rec .li-av{width:72px;height:72px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:grid;place-items:center;font-weight:700;font-family:"IBM Plex Mono",monospace;font-size:20px;flex:0 0 auto;overflow:hidden}
 .rec .li-av img{width:100%;height:100%;object-fit:cover}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .rec .li-av{color:var(--accent)}}
 :root[data-theme="dark"] .rec .li-av{color:var(--accent)}
@@ -527,15 +531,16 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
     <div class="wrap">
       <p class="lbl">Built pipeline for teams at</p>
       <div class="logo-row">
-        <span class="logo-chip"><img src="images/logos/beamery.webp" alt="Beamery" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/pmi.png" alt="Project Management Institute" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/tangible.png" alt="Tangible" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/warden-ai.svg" alt="Warden AI" loading="lazy"></span>
-        <span class="logo-chip"><img src="images/logos/capi-money.png" alt="Capi Money" loading="lazy"></span>
-        <span class="logo-chip"><img src="images/logos/sylvera.svg" alt="Sylvera" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/monolith.svg" alt="Monolith AI" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/capi-money.png" alt="Capi Money" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/centuro-global.png" alt="Centuro Global" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/cambridge-energy.svg" alt="Cambridge Energy" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/sylvera.svg" alt="Sylvera" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/beamery.webp" alt="Beamery" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/entrust.png" alt="Entrust" loading="lazy"></span>
-        <span class="logo-chip"><img src="images/logos/tangible.png" alt="Tangible" loading="lazy"></span>
       </div>
       <p class="logo-nda">+ enterprise clients under NDA</p>
     </div>
@@ -714,24 +719,32 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <div class="proof-grid">
         <div class="proof-card reveal">
           <div class="proof-head">
-            <span class="proof-logo">Capi Money</span>
+            <span class="proof-logo"><img src="images/logos/capi-money.png" alt="Capi Money" loading="lazy"></span>
             <span class="proof-tag">Fintech &middot; Growth</span>
           </div>
           <p class="proof-challenge">Pipeline ran on founder relationships and gut feel. No system to compare which motion worked and no data to back the decisions.</p>
           <div class="proof-result">
             <span class="proof-num">159%</span>
-            <p class="proof-detail">Transaction-volume growth in a year. Top-tier clients went from 31% to 60% of volume and drove 78% of total growth. Built the data and experimentation foundation the team still runs on.</p>
+            <div class="proof-detail"><ul>
+              <li>Transaction-volume growth in a year</li>
+              <li>Top-tier clients went from 31% to 60% of volume, drove 78% of total growth</li>
+              <li>Built the data and experimentation foundation the team still runs on</li>
+            </ul></div>
           </div>
         </div>
         <div class="proof-card reveal">
           <div class="proof-head">
-            <span class="proof-logo">Monolith AI</span>
+            <span class="proof-logo"><img src="images/logos/monolith.svg" alt="Monolith AI" loading="lazy"></span>
             <span class="proof-tag">Engineering AI &middot; Event-led</span>
           </div>
           <p class="proof-challenge">Spending on events with no pre-event targeting. The booth did the work, not the outreach. No way to measure which attendees were ICP-fit.</p>
           <div class="proof-result">
             <span class="proof-num">$700k</span>
-            <p class="proof-detail">Pipeline from about $15k of event spend. 64 companies that fit the ICP, 9 meetings booked before the doors opened. Account selection and pre-event outreach did the work, not the booth.</p>
+            <div class="proof-detail"><ul>
+              <li>Pipeline from about $15k of event spend</li>
+              <li>64 companies that fit the ICP, 9 meetings booked before doors opened</li>
+              <li>Account selection and pre-event outreach did the work, not the booth</li>
+            </ul></div>
           </div>
         </div>
         <div class="proof-card reveal">
@@ -742,18 +755,26 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
           <p class="proof-challenge">Zero presence in an industry that ignores cold outbound. No contact data, no messaging that resonated with Tier-1 manufacturers.</p>
           <div class="proof-result">
             <span class="proof-num">$480k</span>
-            <p class="proof-detail">Pipeline across Tier-1 manufacturers in under 90 days. 550 contacts built from scratch, three deals progressing to close. Cold outbound into an industry that doesn't respond to generic messaging.</p>
+            <div class="proof-detail"><ul>
+              <li>Pipeline across Tier-1 manufacturers in under 90 days</li>
+              <li>550 contacts built from scratch, three deals progressing to close</li>
+              <li>Cold outbound into an industry that doesn't respond to generic messaging</li>
+            </ul></div>
           </div>
         </div>
         <div class="proof-card reveal">
           <div class="proof-head">
-            <span class="proof-logo">Warden AI</span>
+            <span class="proof-logo"><img src="images/logos/warden-ai.svg" alt="Warden AI" loading="lazy"></span>
             <span class="proof-tag">HR-tech &middot; Webinar</span>
           </div>
           <p class="proof-challenge">Needed pipeline fast but no marketing function, no budget for a long ramp, and pressure from the board to show traction.</p>
           <div class="proof-result">
             <span class="proof-num">10 days</span>
-            <p class="proof-detail">To live pipeline. A focused webinar put 3 critical prospects in active pipeline and re-engaged 4 more. The topic was built around what the target accounts already cared about.</p>
+            <div class="proof-detail"><ul>
+              <li>To live pipeline from a focused webinar</li>
+              <li>3 critical prospects in active pipeline, 4 more re-engaged</li>
+              <li>Topic built around what target accounts already cared about</li>
+            </ul></div>
           </div>
         </div>
       </div>
