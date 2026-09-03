@@ -148,11 +148,10 @@ h1.hl{font-size:clamp(40px,5.8vw,64px);letter-spacing:-.04em;line-height:1.04}
 .logo-chip-dark{background:#1a1a2e;border-color:#2a2a3e}
 .logo-chip-duo{gap:8px;padding:0 14px}
 .logo-chip-duo .logo-icon{max-height:30px;max-width:30px;border-radius:6px;flex-shrink:0}
-.logo-chip-duo .logo-wordmark{max-height:18px;max-width:110px;flex-shrink:1}
+.logo-duo-text{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13px;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
 .proof-logo-duo{gap:6px}
 .proof-logo-duo .logo-icon{max-height:22px;max-width:22px;border-radius:4px;flex-shrink:0}
-.proof-logo-duo .logo-wordmark{max-height:14px;max-width:90px;flex-shrink:1}
-.proof-logo-dark{background:#1a1a2e;border-color:#2a2a3e}
+.proof-logo-duo .logo-duo-text{font-size:12px}
 .logo-nda{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:20px}
 
 section{padding:72px 0;position:relative;overflow:hidden}
@@ -307,6 +306,7 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 .proof-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line-soft)}
 .proof-logo{height:40px;padding:0 16px;background:var(--bg-soft);border:1px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:15px;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
 .proof-logo img{max-height:28px;max-width:120px;width:auto;height:auto;object-fit:contain;display:block;border-radius:5px}
+.proof-logo.proof-logo-dark{background:#1a1a2e;border-color:#2a2a3e}
 .proof-tag{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-faint)}
 .proof-challenge{font-size:14.5px;color:var(--ink-soft);margin-bottom:18px;line-height:1.55}
 .proof-result{display:flex;gap:20px;align-items:center;flex:1}
@@ -337,7 +337,7 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 .del-check svg{width:14px;height:14px;fill:#fff}
 .del-card h4{font-family:"Plus Jakarta Sans",sans-serif;font-size:16.5px;font-weight:800;margin-bottom:5px}
 .del-card p{color:var(--ink-soft);font-size:14.5px}
-.sub-eyebrow{margin-top:64px;margin-bottom:8px;text-align:center}
+.sub-eyebrow{margin-top:64px;margin-bottom:8px;text-align:center;display:block;width:fit-content;margin-left:auto;margin-right:auto}
 
 /* Team features (inside merged section) */
 .feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
@@ -543,7 +543,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <div class="logo-row">
         <span class="logo-chip"><img src="images/logos/pmi.png" alt="Project Management Institute" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/tangible.png" alt="Tangible" loading="lazy"></span>
-        <span class="logo-chip logo-chip-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><img class="logo-wordmark" src="images/logos/warden-ai-text.svg" alt="Warden AI" loading="lazy"></span>
+        <span class="logo-chip logo-chip-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><span class="logo-duo-text">Warden AI</span></span>
         <span class="logo-chip logo-chip-dark"><img src="images/logos/monolith.svg" alt="Monolith AI" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/capi-money.webp" alt="Capi Money" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/centuro-global.jpeg" alt="Centuro Global" loading="lazy"></span>
@@ -774,7 +774,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         </div>
         <div class="proof-card reveal">
           <div class="proof-head">
-            <span class="proof-logo proof-logo-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><img class="logo-wordmark" src="images/logos/warden-ai-text.svg" alt="Warden AI" loading="lazy"></span>
+            <span class="proof-logo proof-logo-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><span class="logo-duo-text">Warden AI</span></span>
             <span class="proof-tag">HR-tech &middot; Webinar</span>
           </div>
           <p class="proof-challenge">Needed pipeline fast but no marketing function, no budget for a long ramp, and pressure from the board to show traction.</p>
