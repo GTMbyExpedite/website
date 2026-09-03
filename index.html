@@ -146,6 +146,12 @@ h1.hl{font-size:clamp(40px,5.8vw,64px);letter-spacing:-.04em;line-height:1.04}
 .logo-chip-labeled img{max-height:30px}
 .logo-chip-label{font-family:"Plus Jakarta Sans",sans-serif;font-weight:600;font-size:10px;color:var(--ink-faint);letter-spacing:.01em;white-space:nowrap;line-height:1}
 .logo-chip-dark{background:#1a1a2e;border-color:#2a2a3e}
+.logo-chip-duo{gap:8px;padding:0 14px}
+.logo-chip-duo .logo-icon{max-height:30px;max-width:30px;border-radius:6px;flex-shrink:0}
+.logo-chip-duo .logo-wordmark{max-height:16px;max-width:80px;flex-shrink:1}
+.proof-logo-duo{gap:8px}
+.proof-logo-duo .logo-icon{max-height:22px;max-width:22px;border-radius:4px;flex-shrink:0}
+.proof-logo-duo .logo-wordmark{max-height:14px;max-width:70px;flex-shrink:1}
 .logo-nda{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:20px}
 
 section{padding:72px 0;position:relative;overflow:hidden}
@@ -536,7 +542,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <div class="logo-row">
         <span class="logo-chip"><img src="images/logos/pmi.png" alt="Project Management Institute" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/tangible.png" alt="Tangible" loading="lazy"></span>
-        <span class="logo-chip logo-chip-labeled"><img src="images/logos/warden-ai.jpeg" alt="Warden AI" loading="lazy"><span class="logo-chip-label">Warden AI</span></span>
+        <span class="logo-chip logo-chip-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><img class="logo-wordmark" src="images/logos/warden-ai-text.svg" alt="Warden AI" loading="lazy"></span>
         <span class="logo-chip logo-chip-dark"><img src="images/logos/monolith.svg" alt="Monolith AI" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/capi-money.webp" alt="Capi Money" loading="lazy"></span>
         <span class="logo-chip"><img src="images/logos/centuro-global.jpeg" alt="Centuro Global" loading="lazy"></span>
@@ -767,7 +773,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         </div>
         <div class="proof-card reveal">
           <div class="proof-head">
-            <span class="proof-logo"><img src="images/logos/warden-ai.jpeg" alt="Warden AI" loading="lazy"></span>
+            <span class="proof-logo proof-logo-duo"><img class="logo-icon" src="images/logos/warden-ai-icon.jpeg" alt="Warden AI" loading="lazy"><img class="logo-wordmark" src="images/logos/warden-ai-text.svg" alt="Warden AI" loading="lazy"></span>
             <span class="proof-tag">HR-tech &middot; Webinar</span>
           </div>
           <p class="proof-challenge">Needed pipeline fast but no marketing function, no budget for a long ramp, and pressure from the board to show traction.</p>
