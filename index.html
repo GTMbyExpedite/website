@@ -139,6 +139,9 @@ h1.hl{font-size:clamp(40px,5.8vw,64px);letter-spacing:-.04em;line-height:1.04}
 .logo-row::-webkit-scrollbar{display:none}
 .logo-chip{flex:1 0 auto;min-width:118px;height:62px;background:var(--panel);border:1px solid var(--line);border-radius:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(15,23,60,.05)}
 .logo-text{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:13.5px;color:var(--ink-faint);letter-spacing:-.01em;padding:0 16px}
+.logo-chip img{max-height:28px;max-width:90px;width:auto;height:auto;object-fit:contain;display:block}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-chip img{filter:brightness(0) invert(1) opacity(.7)}}
+:root[data-theme="dark"] .logo-chip img{filter:brightness(0) invert(1) opacity(.7)}
 .logo-nda{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-faint);text-align:center;margin-top:20px}
 
 section{padding:72px 0;position:relative}
@@ -525,14 +528,14 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <p class="lbl">Built pipeline for teams at</p>
       <div class="logo-row">
         <span class="logo-chip"><span class="logo-text">Beamery</span></span>
-        <span class="logo-chip"><span class="logo-text">Warden AI</span></span>
-        <span class="logo-chip"><span class="logo-text">Capi</span></span>
-        <span class="logo-chip"><span class="logo-text">Sylvera</span></span>
-        <span class="logo-chip"><span class="logo-text">Monolith AI</span></span>
-        <span class="logo-chip"><span class="logo-text">Centuro Global</span></span>
-        <span class="logo-chip"><span class="logo-text">Cambridge Energy</span></span>
-        <span class="logo-chip"><span class="logo-text">Entrust</span></span>
-        <span class="logo-chip"><span class="logo-text">Tangible</span></span>
+        <span class="logo-chip"><img src="images/logos/warden-ai.svg" alt="Warden AI" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/capi-money.png" alt="Capi Money" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/sylvera.svg" alt="Sylvera" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/monolith.svg" alt="Monolith AI" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/centuro-global.png" alt="Centuro Global" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/cambridge-energy.svg" alt="Cambridge Energy" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/entrust.png" alt="Entrust" loading="lazy"></span>
+        <span class="logo-chip"><img src="images/logos/tangible.png" alt="Tangible" loading="lazy"></span>
       </div>
       <p class="logo-nda">+ enterprise clients under NDA</p>
     </div>
@@ -758,7 +761,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <div class="quotec reveal">
           <p>"Expedite GTM helped us build the data and experimentation foundations to compare GTM motions and make confident, evidence-based decisions. That discipline changed how our whole team thinks about growth."</p>
           <div class="by">
-            <span class="av" aria-hidden="true">A</span>
+            <span class="av" aria-hidden="true"><img src="images/people/alice-dufeu.jpeg" alt="Alice Dufeu" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></span>
             <div class="by-info">
               <b>Alice</b>
               <span>Head of Growth, Capi Money</span>
@@ -768,7 +771,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <div class="quotec reveal">
           <p>"The right balance of strategic and execution-focused. We pulled off a webinar that strengthened our pipeline and put us in front of the market the right way."</p>
           <div class="by">
-            <span class="av" aria-hidden="true">J</span>
+            <span class="av" aria-hidden="true"><img src="images/people/jeffrey-pole.jpeg" alt="Jeffrey Pole" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></span>
             <div class="by-info">
               <b>Jeff</b>
               <span>Co-founder &amp; CEO, Warden AI</span>
@@ -834,7 +837,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <div class="feat reveal"><div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div><h4>Your team, at the end</h4><p>Documentation and handover so the motion becomes yours.</p></div>
       </div>
       <div class="founder reveal">
-        <div class="f-photo"><span>KK</span></div>
+        <div class="f-photo"><img src="images/people/kartik-founder.jpeg" alt="Kartik Krishnan" style="width:100%;height:100%;object-fit:cover"></div>
         <div>
           <div class="f-name">Kartik Krishnan</div>
           <div class="f-role">Founder, Expedite GTM <a href="https://www.linkedin.com/in/kartik-gtm/" target="_blank" rel="noopener" aria-label="Kartik on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></div>
@@ -935,7 +938,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>Expedite GTM helped us bring more structure to our go-to-market at Centuro. They put solid foundations in place around target accounts and ABM, and helped better align sales and marketing. Even in a fractional role, they were practical, thoughtful, and focused on execution rather than theory. I'd happily recommend them to founders looking to professionalise demand gen without overcomplicating things.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">Z</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/zain-ali.jpeg" alt="Zain Ali"></span>
               <div class="li-info">
                 <b>Zain Ali</b>
                 <span>CEO &amp; Co-Founder</span>
@@ -948,7 +951,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>We had early GTM learnings from our core market, but scaling them into more West African markets required stronger structure and evaluation. Expedite GTM helped us build the data and experimentation foundations needed to rigorously compare GTM motions and make confident, evidence-based decisions. That discipline around measurement and iteration played a key role in unlocking growth.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">A</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/alice-dufeu.jpeg" alt="Alice Dufeu"></span>
               <div class="li-info">
                 <b>Alice Dufeu</b>
                 <span>Head of Growth</span>
@@ -961,7 +964,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>Expedite GTM were great to work with at this early stage. The right balance of strategic and execution-focused. With their help we pulled off a webinar that elevated Warden AI's presence, ensured the market sees us in the right light and enabled us to strengthen our pipeline.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">J</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/jeffrey-pole.jpeg" alt="Jeffrey Pole"></span>
               <div class="li-info">
                 <b>Jeffrey Pole</b>
                 <span>Co-Founder &amp; CEO</span>
@@ -974,7 +977,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>I worked with Expedite GTM at Centuro Global when I was the outgoing fractional CMO, and they stepped in to provide interim demand generation and revenue operations support at a critical time. They quickly got to grips with our data, fixing broken workflows, enriching segmentation with Clay, implementing a preference centre, and optimising scoring models. Sharp strategic thinking with hands-on execution, and strong relationships built with sales while unblocking some tricky HubSpot and process issues. Their work directly improved lead flow and email engagement, and gave me confidence that demand generation was in safe hands.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">R</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/rachel-dennis.jpeg" alt="Rachel Dennis"></span>
               <div class="li-info">
                 <b>Rachel Dennis</b>
                 <span>Fractional CMO</span>
@@ -987,7 +990,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>Working with Expedite GTM has been invaluable. Their expertise in ABM marketing, the collaboration with sales, and a deep understanding of the business and the marketplace are clear. Great leadership and ability to learn, especially whilst taking on ownership of Global Campaigns through a changing market landscape. Their background in paid digital added real depth to our strategies. Well organised, hard working and collaborative. Any team would be lucky to work with them.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">V</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/vilma-edwards.jpeg" alt="Vilma Edwards"></span>
               <div class="li-info">
                 <b>Vilma Edwards</b>
                 <span>Director of Digital &amp; Marketing Ops</span>
@@ -1000,7 +1003,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>Working with the team behind Expedite GTM was a formative experience. We collaborated closely on a range of projects, often tasked with delivering ambitious results under challenging circumstances. What could have been intimidating and stressful was more often fun and exciting. They motivated the whole team and rolled up their sleeves to contribute alongside us. Built the Growth team from the ground up, creating a positive team atmosphere and delivering results.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">S</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/scarlett-pierce.jpeg" alt="Scarlett Pierce"></span>
               <div class="li-info">
                 <b>Scarlett Pierce</b>
                 <span>Senior Manager, Product Marketing</span>
@@ -1013,7 +1016,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             <span class="li-badge"><svg class="li-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg> Recommended on LinkedIn</span>
             <blockquote>The team behind Expedite GTM is the kind you won't forget. Driven, focused, persuasive and fierce growth marketers with passion, sincerity and a positive mindset. They came in, hustled, brought energy and made an impact. They contributed to the success of the company and the team, cultivating a culture where everyone felt safe, appreciated and valued. I thoroughly enjoyed working with them and hope to have the opportunity once again.</blockquote>
             <div class="li-by">
-              <span class="li-av" aria-hidden="true">B</span>
+              <span class="li-av" aria-hidden="true"><img src="images/people/bina-walsh.jpeg" alt="Bina Walsh" loading="lazy"></span>
               <div class="li-info">
                 <b>Bina Walsh</b>
                 <span>Growth</span>
@@ -1048,7 +1051,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             </ul>
           </div>
           <div class="cta-card">
-            <div class="av">KK</div>
+            <div class="av"><img src="images/people/kartik-headshot.png" alt="Kartik Krishnan" style="width:100%;height:100%;object-fit:cover;border-radius:20px"></div>
             <div class="cn">Kartik Krishnan</div>
             <div class="cr">Founder, Expedite GTM</div>
             <div class="meta"><span>30 minutes</span><span>Video call</span><span>No commitment</span></div>
