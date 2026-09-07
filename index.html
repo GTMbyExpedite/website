@@ -92,6 +92,7 @@ a{color:var(--accent);text-decoration:none}
 .btn:hover .arrow{transform:translateX(3px)}
 
 header.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+#sp{position:absolute;bottom:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--blue-500),var(--cyan-500));opacity:.7;pointer-events:none;transition:width .08s linear}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
 .brand{display:flex;align-items:center;gap:11px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
 .brand .tile{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--blue-500),var(--blue-700));display:grid;place-items:center;color:#fff;font-weight:800;font-size:15px;box-shadow:var(--shadow-sm)}
@@ -544,8 +545,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
 <body>
 
 <header class="nav">
+  <div id="sp" aria-hidden="true"></div>
   <div class="wrap nav-in">
-    <a class="brand" href="#top"><span class="tile" aria-hidden="true">E</span> Expedite GTM</a>
+    <a class="brand" href="/"><span class="tile" aria-hidden="true">E</span> Expedite GTM</a>
     <nav class="nav-links">
       <a href="#compare">Compare</a>
       <a href="#method">Method</a>
@@ -1289,6 +1291,17 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   track.addEventListener('scroll',()=>{updateDots()},{passive:true});
   window.addEventListener('resize',()=>{buildDots()});
   buildDots();
+})();
+
+(function(){
+  var sp=document.getElementById('sp');
+  if(!sp)return;
+  function upd(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    sp.style.width=(max>0?(window.scrollY/max*100):0)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
 })();
 </script>
 </body>
