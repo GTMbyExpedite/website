@@ -1142,8 +1142,13 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   if(!wrap)return;
   var area=wrap.querySelector('.vis-area');
   wrap.addEventListener('click',function(){
-    if(area.classList.contains('poured')){area.classList.remove('poured')}
-    else{void area.offsetWidth;area.classList.add('poured')}
+    if(area.classList.contains('poured')){
+      area.classList.remove('poured');
+      gtag('event','pour_demo_interaction',{action:'reset'});
+    } else {
+      void area.offsetWidth;area.classList.add('poured');
+      gtag('event','pour_demo_interaction',{action:'poured'});
+    }
   });
   wrap.addEventListener('keydown',function(e){
     if(e.key==='Enter'||e.key===' '){e.preventDefault();wrap.click()}
@@ -1231,6 +1236,95 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   }
   window.addEventListener('scroll',upd,{passive:true});
   upd();
+})();
+
+// ── GA4 Event Tracking ──────────────────────────────────────────────────────
+
+// 1. Calendly CTA clicks — the primary conversion
+(function(){
+  var ctaMap={
+    'gtm-advisory-call-clone':'hero_or_nav_lets_talk',
+    'abm-campaign-blueprint-call-2026-clone':'advisory_book_session',
+    'gtm-advisory-abm-campaign-blueprint-call-20-clone':'abm_programme_start',
+    'abm-campaign-blueprint-call-2026-clone-clone':'fractional_scope_build'
+  };
+  document.querySelectorAll('a[href*="calendly.com"]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var slug='';
+      try{slug=new URL(this.href).pathname.split('/').filter(Boolean).pop();}catch(e){}
+      gtag('event','calendly_cta_click',{
+        cta_label:(this.textContent||'').trim().replace(/\s+/g,' '),
+        cta_slug:slug,
+        cta_context:ctaMap[slug]||slug,
+        cta_section:this.closest('section')?this.closest('section').id:'nav'
+      });
+    });
+  });
+})();
+
+// 2. Email / mailto clicks
+document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    gtag('event','email_contact_click',{
+      email_context:this.closest('section')?this.closest('section').id:'footer'
+    });
+  });
+});
+
+// 3. LinkedIn / outbound link clicks
+document.querySelectorAll('a[href*="linkedin.com"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    gtag('event','outbound_link_click',{link_domain:'linkedin.com',link_url:this.href});
+  });
+});
+
+// 4. Nav link clicks
+document.querySelectorAll('.nav-links a:not(.btn)').forEach(function(a){
+  a.addEventListener('click',function(){
+    gtag('event','nav_link_click',{link_text:(this.textContent||'').trim()});
+  });
+});
+
+// 5. Testimonial slider navigation
+(function(){
+  var prev=document.getElementById('sliderPrev');
+  var next=document.getElementById('sliderNext');
+  if(prev)prev.addEventListener('click',function(){gtag('event','testimonial_slider_navigation',{direction:'prev'});});
+  if(next)next.addEventListener('click',function(){gtag('event','testimonial_slider_navigation',{direction:'next'});});
+})();
+
+// 6. Section viewed — fires once per section as it enters the viewport
+(function(){
+  var labels={
+    who:'two_ways_in',boards:'boards_awake',cost:'cost_of_waiting',
+    compare:'comparison',method:'saturation_method',proof:'proof',
+    outcomes:'after_90_days',pricing:'pricing',words:'recommendations',book:'final_cta'
+  };
+  var sio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        gtag('event','section_viewed',{
+          section_id:e.target.id,
+          section_name:labels[e.target.id]||e.target.id
+        });
+        sio.unobserve(e.target);
+      }
+    });
+  },{threshold:0.3});
+  document.querySelectorAll('section[id]').forEach(function(s){sio.observe(s);});
+})();
+
+// 7. Scroll depth — 25 / 50 / 75 / 90 %
+(function(){
+  var depths=[25,50,75,90],fired={};
+  window.addEventListener('scroll',function(){
+    var max=document.documentElement.scrollHeight-window.innerHeight;
+    if(max<=0)return;
+    var pct=Math.round(window.scrollY/max*100);
+    depths.forEach(function(d){
+      if(pct>=d&&!fired[d]){fired[d]=true;gtag('event','scroll_depth',{depth_percent:d});}
+    });
+  },{passive:true});
 })();
 </script>
 </body>
