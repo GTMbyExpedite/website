@@ -1,11 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#3D6BEA"/>
-      <stop offset="100%" stop-color="#1A46C0"/>
+    <linearGradient id="bg" x1="150" y1="0" x2="150" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D6BEA"/>
+      <stop offset="1" stop-color="#1A46C0"/>
     </linearGradient>
+    <clipPath id="r">
+      <rect width="300" height="300" rx="66"/>
+    </clipPath>
   </defs>
-  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
-  <path d="M148 120 h168 v56 h-108 v56 h80 v0 l48 0 l-48 48 h-80 v56 h108 v56 h-168 z" fill="#fff"/>
-  <polygon points="316,228 380,228 380,196 428,252 380,308 380,276 316,276" fill="#fff"/>
+  <rect width="300" height="300" rx="66" fill="url(#bg)"/>
+  <g clip-path="url(#r)">
+    <path d="M264.353 147.595L216.29 107.944L216.29 187.246L264.353 147.595Z" fill="white"/>
+    <rect x="81.3906" y="167.441" width="39.5349" height="139.535" transform="rotate(-90 81.3906 167.441)" fill="white"/>
+    <rect x="81.3906" y="100" width="39.5349" height="118.605" transform="rotate(-90 81.3906 100)" fill="white"/>
+    <rect x="81.3906" y="234.883" width="39.5349" height="118.605" transform="rotate(-90 81.3906 234.883)" fill="white"/>
+  </g>
 </svg>
