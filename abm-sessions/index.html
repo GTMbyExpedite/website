@@ -612,7 +612,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
           <h2 style="margin-top:12px">Find out what to <span class="hl-mark">fix first</span></h2>
           <p class="clede">Expedite GTM builds this motion for B2B SaaS and fintech teams. In 30 minutes, we'll pinpoint your biggest gap and tell you honestly whether we're a fit.</p>
           <div class="cta-actions">
-            <a class="btn btn-primary btn-lg" href="https://calendly.com/kartik-expeditegtm/gtm-advisory-call-clone?back=1" target="_blank" rel="noopener">Book a 30-minute call <span class="arrow" aria-hidden="true">&rarr;</span></a>
+            <a class="btn btn-primary btn-lg" href="https://calendly.com/kartik-expeditegtm/gtm-advisory-2026-clone" target="_blank" rel="noopener">Book a 30-minute call <span class="arrow" aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
         <div class="cta-tiles">
@@ -684,6 +684,7 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       gtag('event','calendly_cta_click',{
         cta_label:(this.textContent||'').trim().replace(/\s+/g,' '),
         cta_context:'abm_series_lets_talk',
+        cta_slug:(this.pathname||'').split('/').filter(Boolean).pop()||'',
         cta_section:sectionOf(this)
       });
     });
