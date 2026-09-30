@@ -23,6 +23,7 @@ Expedite GTM's marketing website. Single-page site (`index.html`), deployed via 
 - Direct, specific, no fluff. Write as a practitioner talking to another practitioner (founders and marketing leaders at B2B SaaS companies).
 - No em dashes in short copy (bullets, tags, single-sentence descriptions). Periods or commas instead.
 - Outcome-oriented: bullets describe what the client walks away with, not abstract capabilities.
+- Speak as the company: "Expedite GTM", "the Expedite GTM team", "Expedite GTM's" or "we". Name Kartik only where the copy is genuinely about him: his bio or founder card, his host role on the ABM series, the one-on-one GTM Advisory tier, and testimonials.
 - Slogan density ceiling: max two punchy compressed lines in close proximity. Follow each with plain explanation.
 - These three lines are approved and protected — don't rewrite them:
   1. "AI in the engine, senior judgement at the wheel."
@@ -37,7 +38,7 @@ Expedite GTM's marketing website. Single-page site (`index.html`), deployed via 
 
 ## People
 
-- **Kartik Krishnan** — Founder. Sets strategy. 12 years enterprise GTM (fintech, regtech, AI SaaS).
+- **Kartik Krishnan** — Founder. Sets strategy. Twelve years enterprise GTM (fintech, regtech, AI SaaS). Use "twelve years" everywhere, including the ABM series page.
 - **Rahul** — Fractional Growth Marketer. Generalist. Not a founder.
 
 ## Deployment
