@@ -1131,9 +1131,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
             </ul>
           </div>
           <div class="cta-card">
-            <div class="av"><img src="images/expedite-gtm/icon-default.svg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:20px"></div>
-            <div class="cn">Expedite GTM</div>
-            <div class="cr">Focused, account-based GTM</div>
+            <div class="av"><img src="images/people/kartik-headshot.png" alt="Kartik Krishnan" style="width:100%;height:100%;object-fit:cover;border-radius:20px"></div>
+            <div class="cn">Kartik Krishnan</div>
+            <div class="cr">Founder, Expedite GTM</div>
             <div class="meta"><span>30 minutes</span><span>Video call</span><span>No commitment</span></div>
             <a class="btn btn-primary" href="https://calendly.com/kartik-expeditegtm/gtm-advisory-call-clone" target="_blank" rel="noopener">Let's talk <span class="arrow" aria-hidden="true">&rarr;</span></a>
             <div class="contact">
@@ -1196,9 +1196,17 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
   function getPages(){return Math.ceil(total/getStep())}
 
+  // The last page can hold a single card that never reaches the left edge,
+  // so being scrolled to the end counts as the last page.
+  function atEnd(){
+    return track.scrollWidth>track.clientWidth+2 &&
+      track.scrollLeft+track.clientWidth>=track.scrollWidth-2;
+  }
+
   function currentPage(){
     const step=getStep();
     if(!cards[0])return 0;
+    if(atEnd())return getPages()-1;
     const trackLeft=track.getBoundingClientRect().left;
     let closest=0;let minDist=Infinity;
     for(let p=0;p<getPages();p++){
@@ -1235,6 +1243,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
     const step=getStep();
     const idx=page*step;
     if(idx>=total)return;
+    if(page===getPages()-1){track.scrollTo({left:track.scrollWidth,behavior:'smooth'});return}
     cards[idx].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});
   }
 
