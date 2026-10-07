@@ -173,11 +173,10 @@ section{padding:56px 0}
 .vid-top .vid-label{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .vid-top .vid-cta{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--accent);letter-spacing:.04em;transition:color .15s}
 .vid-card:hover .vid-cta{color:#fff}
-.vid-thumb{position:relative;flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;min-height:200px}
-.vid-thumb .vt-num{position:absolute;top:18px;left:20px;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
-.vid-thumb .vt-speaker{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:rgba(255,255,255,.5)}
-.play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:rgba(31,84,221,.85);display:grid;place-items:center;box-shadow:0 4px 20px rgba(31,84,221,.35);transition:transform .2s,box-shadow .2s,background .2s}
-.vid-card:hover .play-btn{transform:translate(-50%,-50%) scale(1.12);box-shadow:0 6px 28px rgba(31,84,221,.5);background:var(--accent)}
+.vid-thumb{position:relative;flex:1;min-height:0;aspect-ratio:16/9;background:var(--secondary);overflow:hidden}
+.vid-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.play-btn{position:absolute;left:18px;bottom:18px;width:52px;height:52px;border-radius:50%;background:rgba(31,84,221,.85);display:grid;place-items:center;box-shadow:0 4px 20px rgba(31,84,221,.35);transition:transform .2s,box-shadow .2s,background .2s}
+.vid-card:hover .play-btn{transform:scale(1.12);box-shadow:0 6px 28px rgba(31,84,221,.5);background:var(--accent)}
 .play-btn svg{width:20px;height:20px;fill:#fff;margin-left:2px}
 .vid-foot{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-top:1px solid rgba(255,255,255,.08);font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:rgba(255,255,255,.4)}
 
@@ -318,8 +317,8 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <p class="tagline">How to pick 100 accounts, act on the right signals, and keep the motion running every week.</p>
       <p class="sub">Most ABM stalls in the same places: a target list nobody trusts, signals nobody acts on, outbound that lands cold and a weekly review that fades after a quarter. Across four sessions, operators walk through how they fix each one, with tools a lean team can run before it needs 6sense or Demandbase.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="https://fast.wistia.com/embed/channel/zm4vp0p7zo?wchannelid=zm4vp0p7zo&wmediaid=lad9fye226" target="_blank" rel="noopener">Watch session 01 <span class="arrow" aria-hidden="true">&rarr;</span></a>
-        <a class="btn btn-ghost btn-lg" href="#series">See all four sessions</a>
+        <a class="btn btn-primary btn-lg" href="https://fast.wistia.com/embed/channel/ewwyh1jusu?wchannelid=ewwyh1jusu&wmediaid=3nsvtopgk0" target="_blank" rel="noopener">Watch session 01 <span class="arrow" aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-ghost btn-lg" href="https://fast.wistia.com/embed/channel/ewwyh1jusu" target="_blank" rel="noopener">See all four sessions</a>
       </div>
     </div>
   </div>
@@ -396,11 +395,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <h3 class="s-title">Build your 100-account target list</h3>
         <p class="s-speaker"><strong>Mark Walker</strong> &middot; Co-Founder, AI GTM Studio &amp; Inklined &middot; Three-time CRO</p>
         <div class="s-detail rv rv-stagger">
-          <a class="vid-card" href="https://fast.wistia.com/embed/channel/zm4vp0p7zo?wchannelid=zm4vp0p7zo&wmediaid=lad9fye226" target="_blank" rel="noopener">
-            <div class="vid-thumb" style="background:linear-gradient(135deg,#1A46C0 0%,#0A1740 100%)">
-              <span class="vt-num">Session 01</span>
+          <a class="vid-card" href="https://fast.wistia.com/embed/channel/ewwyh1jusu?wchannelid=ewwyh1jusu&wmediaid=3nsvtopgk0" target="_blank" rel="noopener">
+            <div class="vid-thumb"><img src="/images/abm-sessions/session-01.jpg" alt="Session 01 with Mark Walker" loading="lazy">
               <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-              <p class="vt-speaker">Kartik Krishnan &times; Mark Walker</p>
             </div>
             <div class="vid-top">
               <span class="vid-label">The list</span>
@@ -429,11 +426,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <h3 class="s-title">Signals that trigger action</h3>
         <p class="s-speaker"><strong>Karishma Rajaratnam</strong> &middot; Product Marketing, Clay &middot; ex-Vidyard, Chargebee</p>
         <div class="s-detail rv rv-stagger">
-          <a class="vid-card" href="https://fast.wistia.com/embed/channel/zm4vp0p7zo?wchannelid=zm4vp0p7zo&wmediaid=67z4dbhc1v" target="_blank" rel="noopener">
-            <div class="vid-thumb" style="background:linear-gradient(135deg,#12A9D8 0%,#0A1740 100%)">
-              <span class="vt-num">Session 02</span>
+          <a class="vid-card" href="https://fast.wistia.com/embed/channel/ewwyh1jusu" target="_blank" rel="noopener">
+            <div class="vid-thumb"><img src="/images/abm-sessions/session-02.jpg" alt="Session 02 with Karishma Rajaratnam" loading="lazy">
               <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-              <p class="vt-speaker">Kartik Krishnan &times; Karishma Rajaratnam</p>
             </div>
             <div class="vid-top">
               <span class="vid-label">The signals</span>
@@ -462,11 +457,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <h3 class="s-title">Warming the account before it's ready</h3>
         <p class="s-speaker"><strong>Chris Winterhoff</strong> &middot; Director, Deep Growth &middot; B2B paid media</p>
         <div class="s-detail rv rv-stagger">
-          <a class="vid-card" href="https://fast.wistia.com/embed/channel/zm4vp0p7zo?wchannelid=zm4vp0p7zo&wmediaid=s2cj1epm9i" target="_blank" rel="noopener">
-            <div class="vid-thumb" style="background:linear-gradient(135deg,#3D6BEA 0%,#1A46C0 100%)">
-              <span class="vt-num">Session 03</span>
+          <a class="vid-card" href="https://fast.wistia.com/embed/channel/ewwyh1jusu?wchannelid=ewwyh1jusu&wmediaid=2s0vsklskk" target="_blank" rel="noopener">
+            <div class="vid-thumb"><img src="/images/abm-sessions/session-03.jpg" alt="Session 03 with Chris Winterhoff" loading="lazy">
               <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-              <p class="vt-speaker">Kartik Krishnan &times; Chris Winterhoff</p>
             </div>
             <div class="vid-top">
               <span class="vid-label">The warmth</span>
@@ -495,11 +488,9 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
         <h3 class="s-title">The operating rhythm</h3>
         <p class="s-speaker"><strong>Kayla Campos</strong> &middot; Founder, Revautex &middot; Attio implementation &middot; ex-Salesforce</p>
         <div class="s-detail rv rv-stagger">
-          <a class="vid-card" href="https://fast.wistia.com/embed/channel/zm4vp0p7zo?wchannelid=zm4vp0p7zo&wmediaid=d7f09ggfyq" target="_blank" rel="noopener">
-            <div class="vid-thumb" style="background:linear-gradient(135deg,#0A1740 0%,#1F54DD 100%)">
-              <span class="vt-num">Session 04</span>
+          <a class="vid-card" href="https://fast.wistia.com/embed/channel/ewwyh1jusu?wchannelid=ewwyh1jusu&wmediaid=r8xqygjcbx" target="_blank" rel="noopener">
+            <div class="vid-thumb"><img src="/images/abm-sessions/session-04.jpg" alt="Session 04 with Kayla Campos" loading="lazy">
               <div class="play-btn"><svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg></div>
-              <p class="vt-speaker">Kartik Krishnan &times; Kayla Campos</p>
             </div>
             <div class="vid-top">
               <span class="vid-label">The rhythm</span>
