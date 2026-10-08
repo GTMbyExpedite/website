@@ -79,7 +79,8 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(i
 .nav-links a:not(.btn){font-size:14.5px;color:var(--ink-soft);font-weight:500;padding-bottom:4px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:not(.btn):hover{color:var(--ink);border-bottom-color:var(--accent)}
 @media(max-width:880px){.nav-links a:not(.btn){display:none}}
-.nav-new{position:relative;white-space:nowrap;padding:8px 16px 8px 9px;font-size:14px;color:var(--accent-deep);background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 35%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent)}
+.nav-links .btn{white-space:nowrap}
+.nav-new{position:relative;padding:8px 16px 8px 9px;font-size:14px;color:var(--accent-deep);background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 35%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent)}
 .nav-new:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 14%,transparent),var(--shadow-sm)}
 .nav-new-ic{width:24px;height:24px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
 .nav-new-ic svg{width:10px;height:10px;fill:#fff;margin-left:1px}
@@ -87,7 +88,7 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(i
 @keyframes newFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){.new-tag{animation:none}}
 @media(max-width:560px){.nav-links{gap:12px}.nav-new{padding:7px 11px;font-size:13px}.nav-new-ic{display:none}.new-tag{right:-7px}.nav-links .btn-primary{padding:9px 14px;font-size:14px}}
-@media(max-width:380px){.brand img{height:30px!important}.nav-links{gap:10px}.nav-new{padding:7px 9px;font-size:12.5px}.nav-links .btn-primary{padding:9px 12px;font-size:13.5px}}
+@media(max-width:400px){.brand img{height:30px!important}.nav-links{gap:10px}.nav-new{padding:7px 9px;font-size:12.5px}.nav-links .btn-primary{padding:9px 12px;font-size:13.5px}}
 
 .hero{padding:78px 0 26px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-45% 25% 35% -12%;background:radial-gradient(58% 58% at 42% 32%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%);pointer-events:none;z-index:0;animation:heroGlow 6s ease-in-out infinite alternate}
@@ -301,6 +302,29 @@ table.cmp tbody tr:last-child th,table.cmp tbody tr:last-child td{border-bottom:
 .sat-lbl{position:absolute;bottom:0;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-faint)}
 .sat-l{left:0}.sat-r{right:0;color:var(--accent-deep)}
 .steps-note{margin-top:30px;color:var(--ink-soft);font-size:16px;max-width:62em;text-align:center;margin-left:auto;margin-right:auto}
+
+/* ABM series promo (end of #method) */
+.series-promo{position:relative;isolation:isolate;margin-top:56px;padding:40px;border-radius:var(--r-lg);overflow:hidden;border:1px solid color-mix(in srgb,var(--accent) 16%,transparent);background:radial-gradient(70% 90% at 100% 0%,color-mix(in srgb,var(--cyan-500) 16%,transparent),transparent 70%),linear-gradient(160deg,var(--accent-tint),color-mix(in srgb,var(--cyan-500) 9%,var(--bg)));box-shadow:var(--shadow);transition:transform .18s,box-shadow .18s}
+.series-promo::before{content:"";position:absolute;z-index:-1;width:960px;height:960px;right:-320px;top:-440px;border-radius:50%;background:repeating-radial-gradient(circle,transparent 0 11px,color-mix(in srgb,var(--accent) 10%,transparent) 11px 12px);-webkit-mask-image:radial-gradient(circle,#000 25%,transparent 68%);mask-image:radial-gradient(circle,#000 25%,transparent 68%);pointer-events:none}
+.series-promo:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.sp-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 32px;flex-wrap:wrap}
+.sp-label{display:flex;align-items:center;gap:10px;margin:0;font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+.sp-label .new-tag{position:static;animation:none;box-shadow:none}
+.sp-title{margin-top:12px;font-size:clamp(28px,3.4vw,40px);letter-spacing:-.03em}
+.sp-sub{margin:12px 0 0;max-width:34em;color:var(--ink-soft);font-size:17px;line-height:1.55}
+.sp-cta{flex:none}
+.series-promo .sp-cta:hover{transform:none}
+.sp-cta::after{content:"";position:absolute;inset:0;border-radius:var(--r-lg)}
+.sp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px}
+.sp-spk{margin:0;text-align:center}
+.sp-spk img{width:100%;height:auto;aspect-ratio:429/361;object-fit:cover;border-radius:16px;display:block;box-shadow:var(--shadow-sm)}
+.sp-spk figcaption{margin-top:14px}
+.sp-n{display:block;font-family:"IBM Plex Mono",monospace;font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-deep)}
+.sp-name{display:block;margin-top:4px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;color:var(--ink)}
+.sp-role{display:block;text-wrap:balance;margin-top:6px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
+@media(max-width:860px){.series-promo{padding:28px}.sp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.series-promo{margin-top:40px;padding:22px 18px}.sp-grid{gap:18px 12px}.sp-name{font-size:16px}.sp-role{font-size:11px}.sp-cta{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){.series-promo,.series-promo:hover{transition:none;transform:none}}
 .steps-note b{color:var(--ink);font-weight:700}
 
 /* Proof - cards with company logo chips */
@@ -758,6 +782,24 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
           <div class="bar"></div><h3>Compound</h3><p>Align sales and marketing on one list, document it, and hand the engine to your team so it keeps running.</p></div>
       </div>
       <p class="steps-note reveal">Fewer channels, run harder. <b>AI handles research, list-building and initial outreach</b> at a scale a small team can't match on its own. People decide what's good enough to send and what ships. Our outbound, event and email maturity models nest inside these four stages, so you always know which level you're operating at.</p>
+      <div class="reveal">
+        <div class="series-promo">
+          <div class="sp-head">
+            <div>
+              <p class="sp-label"><span class="new-tag">New</span>Video series &middot; 4 sessions</p>
+              <h3 class="sp-title">How operators run <span class="hl-mark">ABM with AI</span></h3>
+              <p class="sp-sub">How to pick 100 accounts, act on the right signals, and keep the motion running every week.</p>
+            </div>
+            <a class="btn btn-primary btn-lg sp-cta" href="/abm-sessions/">Watch the sessions <span class="arrow" aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="sp-grid">
+            <figure class="sp-spk"><img src="images/abm-sessions/speakers/mark-walker.jpg" alt="Mark Walker" width="429" height="361" loading="lazy"><figcaption><span class="sp-n">01 · The list</span><span class="sp-name">Mark Walker</span><span class="sp-role">Founder at AI GTM Studio<br>CEO at Inklined</span></figcaption></figure>
+            <figure class="sp-spk"><img src="images/abm-sessions/speakers/karishma-rajaratnam.jpg" alt="Karishma Rajaratnam" width="429" height="361" loading="lazy"><figcaption><span class="sp-n">02 · The signals</span><span class="sp-name">Karishma Rajaratnam</span><span class="sp-role">Product Marketing at Clay<br>ex-Vidyard, Chargebee</span></figcaption></figure>
+            <figure class="sp-spk"><img src="images/abm-sessions/speakers/chris-winterhoff.jpg" alt="Chris Winterhoff" width="429" height="361" loading="lazy"><figcaption><span class="sp-n">03 · The warmth</span><span class="sp-name">Chris Winterhoff</span><span class="sp-role">Director at Deep Growth</span></figcaption></figure>
+            <figure class="sp-spk"><img src="images/abm-sessions/speakers/kayla-campos.jpg" alt="Kayla Campos" width="429" height="361" loading="lazy"><figcaption><span class="sp-n">04 · The rhythm</span><span class="sp-name">Kayla Campos</span><span class="sp-role">Founder at Revautex<br>ex-Salesforce</span></figcaption></figure>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
