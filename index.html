@@ -79,6 +79,15 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(i
 .nav-links a:not(.btn){font-size:14.5px;color:var(--ink-soft);font-weight:500;padding-bottom:4px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:not(.btn):hover{color:var(--ink);border-bottom-color:var(--accent)}
 @media(max-width:880px){.nav-links a:not(.btn){display:none}}
+.nav-new{position:relative;white-space:nowrap;padding:8px 16px 8px 9px;font-size:14px;color:var(--accent-deep);background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 35%,transparent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 8%,transparent)}
+.nav-new:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 14%,transparent),var(--shadow-sm)}
+.nav-new-ic{width:24px;height:24px;border-radius:50%;background:var(--accent);display:grid;place-items:center;flex:none}
+.nav-new-ic svg{width:10px;height:10px;fill:#fff;margin-left:1px}
+.new-tag{position:absolute;top:-10px;right:-10px;font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.1em;line-height:1;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 7px;border-radius:999px;box-shadow:0 0 0 2px var(--bg),0 4px 10px color-mix(in srgb,var(--accent) 35%,transparent);animation:newFloat 2.4s ease-in-out infinite}
+@keyframes newFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.new-tag{animation:none}}
+@media(max-width:560px){.nav-links{gap:12px}.nav-new{padding:7px 11px;font-size:13px}.nav-new-ic{display:none}.new-tag{right:-7px}.nav-links .btn-primary{padding:9px 14px;font-size:14px}}
+@media(max-width:380px){.brand img{height:30px!important}.nav-links{gap:10px}.nav-new{padding:7px 9px;font-size:12.5px}.nav-links .btn-primary{padding:9px 12px;font-size:13.5px}}
 
 .hero{padding:78px 0 26px;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:-45% 25% 35% -12%;background:radial-gradient(58% 58% at 42% 32%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%);pointer-events:none;z-index:0;animation:heroGlow 6s ease-in-out infinite alternate}
@@ -491,7 +500,8 @@ footer{padding:44px 0 60px;border-top:1px solid var(--line);color:var(--ink-fain
       <a href="#method">Method</a>
       <a href="#proof">Proof</a>
       <a href="#pricing">Pricing</a>
-<a class="btn btn-primary" href="https://calendly.com/kartik-expeditegtm/gtm-advisory-call-clone" target="_blank" rel="noopener">Let's talk</a>
+<a class="btn nav-new" href="/abm-sessions/"><span class="nav-new-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7,4 20,12 7,20"/></svg></span>ABM sessions<span class="new-tag">New</span></a>
+      <a class="btn btn-primary" href="https://calendly.com/kartik-expeditegtm/gtm-advisory-call-clone" target="_blank" rel="noopener">Let's talk</a>
     </nav>
   </div>
 </header>
@@ -1316,6 +1326,14 @@ document.querySelectorAll('a[href*="linkedin.com"]').forEach(function(a){
 document.querySelectorAll('.nav-links a:not(.btn)').forEach(function(a){
   a.addEventListener('click',function(){
     gtag('event','nav_link_click',{link_text:(this.textContent||'').trim()});
+  });
+});
+
+// 4b. ABM series page clicks
+document.querySelectorAll('a[href^="/abm-sessions"]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var sec=this.closest('section');
+    gtag('event','abm_series_click',{link_location:this.closest('header')?'nav':(sec&&sec.id?sec.id:'footer')});
   });
 });
 
